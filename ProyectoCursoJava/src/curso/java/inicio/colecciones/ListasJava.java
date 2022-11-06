@@ -60,7 +60,8 @@ public class ListasJava {
 			// ver si esta vacio  lista.isEmpty()
 			// ver si tiene un ele  .contains()   se le puede pasar la referencia de un obj
 			//  devolver el obj en una pos   .get(0)
-			// sustituir un valor set(0,"hey")
+			// sustituir un valor .set(0,"hey")
+			// borrar .remove(0)  por posicion  o por valor .remove("x");
 			
 			
 			Set <String> testSet = new HashSet<String>();
@@ -74,7 +75,16 @@ public class ListasJava {
 			for (String texto : testSet) {
 				//System.out.println(texto);
 			}
-			
+			/*
+			 * Sets
+			 * 	no guarda la informacion de manera ordenada, osea segun lo mentemos, el le cambia el orden internamente
+			 * añadir  .add()  / no se puede indicar la posicion   ,,, devuelve un boolean de si lo inserta o no
+			 * tamaño  .size()
+			 * ver si esta vacio .isEmpty()
+			 * borrar .remove(x);
+			 * tiene uno en concreto .contains("x")
+			 * 
+			 * */
 			
 	
 	}
