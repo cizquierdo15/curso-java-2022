@@ -52,7 +52,7 @@ public class ApuntesLibreiras {
 	 * Para ver el funcionamiento de la libreria
 	 * 		o en el .class  o en la documentacion al llamar a las funciones
 	 * 
-	 * 
+	 * REPASAR Log4J2
 	 * 	Maven
 	 * 		Gestion de dependencias.   a traves de un fichero de conf, todo el mundo del proyecto, tiene las mismas librerias y versiones
 	 * 									con el pom.xml  (ej de dato que tiene dentro  mysql-3.1)
@@ -71,11 +71,9 @@ public class ApuntesLibreiras {
 	 * 		
 	 * 
 	 * 		la configuracion del proyecto estara en el pom.xml
-	 * 
-	 * 
-	 * 	para cambiar la version de compilacion del proyecto, cambiar en el pom ( o agregar)
-	 * 		debajo de descripcion
-	 * 		luego en el proyecto, boton derecho Maven, Update Proyect
+	 *      
+	 *      CAMBIAR VERSION MAVEN,,,, en el pom.xml  <maven.compiler.source> y la de abajo,,, cambiar Nº a la version elegida,, Boton derecho en Proyecto -> Maven -> update Proyect
+	 *      
 	 * 
 	 * 	cambiar dependencias
 	 * 		 buscamos en google x libreria maven para que nos redirija al repositorio de maven, seleccionamos la vers, copiamos el codigo
@@ -201,6 +199,37 @@ public class ApuntesLibreiras {
 		        }
 		    }
 	 * 	
+	 * HIBERNATE
+	 * 	framwork para trabajar con BDD
+	 * 
+	 * 	la clase ha de tener el @Entity encima del nombre de la clase
+	 *  con @Tacle{name = "x"}  le dariamos un nombre a la tabla
+	 * 	todas las tablas han de tener PrimaryKry, por ello ha de haber un campo con @Id un atributo de la clase sera la clave, junto con los campos de la tabla ( atributos de la clase)
+	 * 	 @GeneratedValue{ strategy = GenerationType.IDENTIY}   (Buscar)
+	 *  se puede dar propiedades a los campos de la tabla, en los atributos , encima @Column{lenght = 9 m name= "nombre_alumno, unque = true}  <- Ejemplos
+	 *	@Transient (encima de un atributo) 	enste campo en la tabla de la BDD no ha de aparecer   pero podemos usar el atributo en la Clase
+	 *	
+	 *
+	 *	En una Clase con main ,,, se obtiene el EntityManager em =JpaUtil.getEntityManager();  que es el obj con toda la configuracion
+	 *	
+	 *	a ese obj le vamos dando las instrucciones
+	 *	//REvisar enum  
+	 *	  Ver utilidadesHibernate
+	 *	  
+	 *
+	 *  SPRING
+	 *  	**Detalles**
+	 *  		frameork ,, tiene distintos modulos	
+	 *  		 ventajas: abtraccion  ,  integra componentes con un fichero.xml
+	 *  		 Caracteristicas:   Inversion de control(no se crean objs con new   los cra apartir de la configuracion k le damos) --- Inyeccion de dependencias (los valores y metodos se asignan a partir de un contenedor DI)--- Prog orientada a Aspectos(manejar los obj con AspectJ, maneja los componentes de los obj-- dependiendo de los permisos del obj , lo mira el)
+	 *  		 
+	 *  		creacion de objs
+	 *  			con un fichero xml de config    el contenedor tiene la info necesaria      se crean los BEANS (contienen la info para que el contenedor sepa k tiene k tener)
+	 *  			
+	 *  			
+	 *  
+	 *  			
+	 *  		
 	 *
 	 * */
 
