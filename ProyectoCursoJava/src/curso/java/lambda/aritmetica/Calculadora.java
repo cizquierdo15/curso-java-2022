@@ -1,4 +1,4 @@
-package curso.java.funcional.lambda.aritmetica;
+package curso.java.lambda.aritmetica;
 
 import java.util.function.BiFunction;
 

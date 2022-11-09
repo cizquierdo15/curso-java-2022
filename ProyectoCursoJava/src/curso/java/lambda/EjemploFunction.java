@@ -1,4 +1,4 @@
-package curso.java.funcional.lambda;
+package curso.java.lambda;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

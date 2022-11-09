@@ -1,6 +1,8 @@
 package curso.java.lambda;
 
+
 import java.text.SimpleDateFormat;
+
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -8,7 +10,9 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import curso.java.funcional.lambda.models.Usuario;
+import curso.java.lambda.aritmeticaA.Usuario;
+
+
 
 public class ApuntesConsumer {
 
@@ -34,7 +38,7 @@ public class ApuntesConsumer {
         List<String> nombres = Arrays.asList("andres", "pepe", "luz", "paco");
         nombres.forEach(consumidor2); //va cogiendo los elementos y ejecuta ( muestra),,,, acepta elementos que implementen Consumer
 
-        Supplier<Usuario> creaUsuario = Usuario::new;
+       /* Supplier<Usuario> creaUsuario = Usuario::new;
         Usuario usuario = creaUsuario.get();
 
         BiConsumer<Usuario, String> asignarNombre = Usuario::setNombre;
@@ -43,7 +47,7 @@ public class ApuntesConsumer {
 
         Supplier<String> proveedor = () -> "Hola mundo lambda supplier";
 
-        System.out.println(proveedor.get());
+        System.out.println(proveedor.get());*/
 
 	}
 

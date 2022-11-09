@@ -1,4 +1,4 @@
-package curso.java.funcional.lambda.aritmetica;
+package curso.java.lambda.aritmetica;
 
 @FunctionalInterface
 public interface Aritmetica {

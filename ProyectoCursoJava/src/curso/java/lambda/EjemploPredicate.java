@@ -1,9 +1,9 @@
-package curso.java.funcional.lambda;
+package curso.java.lambda;
 
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
-import curso.java.funcional.lambda.models.Usuario;
+
 
 public class EjemploPredicate {
     public static void main(String[] args) {
@@ -21,11 +21,11 @@ public class EjemploPredicate {
         boolean r2 = t4.test(5, 10);
         System.out.println(r2);
 
-        Usuario a = new Usuario();
+        /*Usuario a = new Usuario();
         Usuario b = new Usuario();
         a.setNombre("maria");
         b.setNombre("cata");
         BiPredicate<Usuario, Usuario> t5 = (ua, ub) -> ua.getNombre().equals(ub.getNombre());
-        System.out.println(t5.test(a, b));
+        System.out.println(t5.test(a, b));*/
     }
 }

@@ -1,7 +1,7 @@
-package curso.java.funcional.lambda;
+package curso.java.lambda;
 
-import curso.java.funcional.lambda.aritmetica.Aritmetica;
-import curso.java.funcional.lambda.aritmetica.Calculadora;
+import curso.java.lambda.aritmetica.Aritmetica;
+import curso.java.lambda.aritmeticaA.Calculadora;
 
 public class EjemploInterfaceFunctional {
     public static void main(String[] args) {
@@ -11,8 +11,8 @@ public class EjemploInterfaceFunctional {
 
         Calculadora cal = new Calculadora();
 
-        System.out.println(cal.computar(10, 5, suma));
-        System.out.println(cal.computar(10, 5, resta));
+       /* System.out.println(cal.computar(10, 5, suma));
+        System.out.println(cal.computar(10, 5, resta));*/
         System.out.println(cal.computar(10, 5, (a ,b) -> a * b));
 
         System.out.println(cal.computarConBiFunction(10, 5, (a, b) -> a+b));

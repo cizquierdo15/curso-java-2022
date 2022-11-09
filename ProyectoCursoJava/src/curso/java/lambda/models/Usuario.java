@@ -1,4 +1,4 @@
-package curso.java.funcional.lambda.models;
+package curso.java.lambda.models;
 
 public class Usuario {
     private String nombre;
