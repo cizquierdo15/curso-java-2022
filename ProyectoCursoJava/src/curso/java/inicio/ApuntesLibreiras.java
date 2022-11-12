@@ -1,16 +1,21 @@
 package curso.java.inicio;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+//¡*import static org.junit.jupiter.api.Assertions.assertEquals;
+//import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+//import java.sql.Connection;
+//import java.math.BigDecimal;
+//import java.sql.Date;
+//import java.sql.DriverManager;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+//import java.sql.SQLException;
+//import java.sql.Statement;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import curso.java.ejercicios.libreria.Utilidades;
+//import curso.java.junit.models.Cuenta;
 
 
 
@@ -53,6 +58,7 @@ public class ApuntesLibreiras {
 	 * 		o en el .class  o en la documentacion al llamar a las funciones
 	 * 
 	 * REPASAR Log4J2
+	 * ***********************************
 	 * 	Maven
 	 * 		Gestion de dependencias.   a traves de un fichero de conf, todo el mundo del proyecto, tiene las mismas librerias y versiones
 	 * 									con el pom.xml  (ej de dato que tiene dentro  mysql-3.1)
@@ -80,6 +86,36 @@ public class ApuntesLibreiras {
 	 * 		en el pom , entre las etiquetas	<dependencies> lo pegamos
 	 * 		-- las descarga en c user userX  .m2 repository
 	 * 	
+	 * 	FASES MAVEN
+	 * 		(test) Se puede generar el Jar   plugin.... maven-jar-plugin     (del pom.xml)
+	 * 		(pakage) Hacer Pruebas unitarias   plugin.... maven-surefire-pligin
+	 * 			
+	 * 		 dependencia junit.jupiter es una libreria de JUNIT , para poder integrarlo con maven 
+	 * 			las pruebas unitarias se ejecutan  antes de subir el codigo al repo 
+	 * 			en el pom hay plugins con el mobre de maven- que añaden funcionalidades
+	 * 			en el pom cambiar directorio al deseado (l 4 0 )
+	 * 		DEsde al ejecutar el proyecto podemos acceder a las distintas funcionalidades de maven (run ->)
+	 * 
+	 * 		las pruebas UNITARIAS estan en:   src/test/java
+	 * 		al hacer run --> maven build ,,, en el apartado goals podemo indicar que acciones hacer a la vez pej: clean y test 
+	 * 
+	 * 		con los test nos aseguramos de que el programa funciona bien, y si metemos nuevo codigo testearlo,,,, se pueden hacer test a nuestro gusto, crear los propios ofcc
+	 * 		En las clases con los test, se van hasiendo asserts,,, que esperan valores distintos  pej:
+	 * 																								Cuenta cuenta = new Cuenta("Persona1", new BigDecimal("10000.12345"));
+																									String esperado = "Persona1";
+																									String real = cuenta.getPersona();
+																									
+																									assertNotNull(null);
+																									assertEquals(esperado, real);
+																									assertTrue(real.equals("Persona1"));
+	 * 				estos asserts vienen en el paquete or.junit.Jupiter.api.Assertions
+	 * 
+	 * 		la accion de pakage es la que te crea el jar (buid?)
+	 * 
+	 * 		como generar jar y pom.xml con junit y Maven
+	 * 		como generar artifact id en la nube
+	 * 
+	 * __________________________________________________________________________________________
 	 * 
 	 *  BDDD		
 	 * habiendo importado el proyecto de la BDDD
@@ -198,7 +234,7 @@ public class ApuntesLibreiras {
 		            throwables.printStackTrace();
 		        }
 		    }
-	 * 	
+	 * 	*****************************************************************************************************
 	 * HIBERNATE
 	 * 	framwork para trabajar con BDD
 	 * 
@@ -216,6 +252,7 @@ public class ApuntesLibreiras {
 	 *	//REvisar enum  
 	 *	  Ver utilidadesHibernate
 	 *	  
+	 ************************************************************************************
 	 *
 	 *  SPRING
 	 *  	**Detalles**
@@ -226,10 +263,32 @@ public class ApuntesLibreiras {
 	 *  		creacion de objs
 	 *  			con un fichero xml de config    el contenedor tiene la info necesaria      se crean los BEANS (contienen la info para que el contenedor sepa k tiene k tener)
 	 *  			
-	 *  			
-	 *  
-	 *  			
+	 *  		en beam.xml	
+	 *  		<bean id="X" class="ruta.NClase" (scope="prototype" <- opcional   los obj con eso solo se cra cuando se invocan conel getBean() ... si no se crea al inicializar..... con scope="singleton"  solo crea un obj , luego accedes a la pos de memoria)>  para crear la clase, los campos que queremos van en <property>  .... creaame este obj con esta info  ,,, crea get y set de los campos
+	 *  		en otro bean de abajo le dices oye necesito este bean (con id ="idDelBean" class="X")  y lo busca dentro de su contexto  
 	 *  		
+	 *  		luego en la calse con el main en vez de hacer new objX   creas el obj asi 
+	 *  			llamas al contexto.... ApplicationContext contx = new ClassPathXmlApplicationContext("Beass-xml")
+	 *  			contexto dame x obj.... XClase test = (XClase) context.getBean("XClase")  (necesito edte obj)
+	 *  			usar obj.... test.metodo()
+	 *  		
+	 *  		en las clases tambien se puede indicar que es un componente con anotaciones @Component("nombre") y su Scope con @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE) y valores por defecto en los sets con @Value("x")
+	 *  			-- Proviamente en el beans.xml del proyecto hay que definir <context:componet-scan base-package="x"> para que se de cuenta
+	 *  				y el <bean>
+	 *  
+	 *  		En una clase @Autowired private Persona x  crea obj con la clase definida en el <bean >  con los campos definidos en esa clase   si hay varios bean que usan la clase persona, se le puede concretar @Qualifier("idBean") @Autowired Persona x2
+	 *  
+	 *  		Spring Boot --- para crear proyectos de Spring
+	 *  			new - proyect - Spring Boot starter proyect - config : en la url tambien se puede configurar,,, tipo proyecto - lenguaje - version - gurppo - articact - paquete    luego que queremos meter  
+	 * 			
+	 * 				luego hay que configurarlo aparte en application.properties
+	 *  
+	 *  *************************************************************			
+	 *  		
+	 *	
+	 *		
+	 *
+	 *
 	 *
 	 * */
 
